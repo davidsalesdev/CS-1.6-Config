@@ -1,0 +1,601 @@
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+//  F n a t i c  R a i d C a l l ' s  G r a p h i c a l  U s e r  I n t e r f a c e  #  2 0 1 2 . 0 7 . 2 8
+//  B y
+//  T i b o r  ' T i b b s e '  S e r e s t y e n
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+// Command Menu definition
+// 
+// Basic Format:
+//		"<Bound Key>" "<Button Text>" "<Command sent to server>"
+//
+// 
+//
+//
+// Buttons can also open up submenus, as follows:
+// {
+// 	"Some More Options",
+//	{
+//		...
+//	}
+// }
+//
+//
+// Buttons preceded with "CUSTOM" are handled in special ways. They can only be moved
+// around or deleted.
+//
+//
+// Limitations:
+//		Maximum of 50 menus.
+//		Maximum of 100 buttons per menu.
+//
+// 	 	Edited by Tibor 'Tibbse' Serestyen 2012.07.25
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+"*" "server"
+{
+	"*" "server: rcon"
+	{
+		"*" "server: maps"
+		{ 
+			"*" "maps: dust2"      	               	"rcon changelevel de_dust2"
+			"*" "maps: forge"                       "rcon changelevel de_forge"
+			"*" "maps: inferno"       	        "rcon changelevel de_inferno"
+			"*" "maps: mirage"     	                "rcon changelevel de_mirage"
+			"*" "maps: nuke"       	              	"rcon changelevel de_nuke"
+			"*" "maps: train"         	        "rcon changelevel de_train"
+			"*" "maps: tuscan"    	                "rcon changelevel de_tuscan"
+		}
+		"*" "server: cvars"
+		{
+			"*" "cvars: startmoney"
+			{
+				"*" "startmoney: 800" 		"rcon mp_startmoney 800"
+				"*" "startmoney: 5000" 		"rcon mp_startmoney 5000"
+				"*" "startmoney: 10000" 	"rcon mp_startmoney 10000"
+				"*" "startmoney: 16000"		"rcon mp_startmoney 16000"
+				"*" "startmoney: custom"	"messagemode rcon mp_startmoney"
+			}
+			"*" "cvars: roundtime"
+			{
+				"*" "roundtime: 1.45 min." 	"rcon mp_roundtime 1.75"
+				"*" "roundtime: 2.00 min." 	"rcon mp_roundtime 2"
+				"*" "roundtime: 4.00 min." 	"rcon mp_roundtime 4"
+				"*" "roundtime: 6.00 min." 	"rcon mp_roundtime 6"
+				"*" "roundtime: custom"		"messagemode rcon mp_roundtime"
+			}
+			"*" "cvars: buytime"
+			{
+				"*" "buytime: 00 sec." 		"rcon mp_buytime 0"
+				"*" "buytime: 15 sec." 		"rcon mp_buytime 0.25"
+				"*" "buytime: 30 sec." 		"rcon mp_buytime 0.5"
+				"*" "buytime: 60 sec." 		"rcon mp_buytime 1"
+				"*" "buytime: custom"		"messagemode rcon mp_buytime"
+			}
+			"*" "cvars: freezetime"
+			{
+				"*" "freezetime: 00 sec." 	"rcon mp_freezetime 0"
+				"*" "freezetime: 06 sec." 	"rcon mp_freezetime 6"
+				"*" "freezetime: 10 sec." 	"rcon mp_freezetime 10"
+				"*" "freezetime: 15 sec." 	"rcon mp_freezetime 15"
+				"*" "freezetime: custom"	"messagemode rcon mp_freezetime"
+			}	
+			"*" "cvars: c4 timer"
+			{
+				"*" "c4 timer: 30 sec." 	"rcon mp_c4timer 30"
+				"*" "c4 timer: 35 sec." 	"rcon mp_c4timer 35"
+				"*" "c4 timer: 40 sec." 	"rcon mp_c4timer 40"
+				"*" "c4 timer: 45 sec." 	"rcon mp_c4timer 45"
+				"*" "c4 timer: custom"		"messagemode rcon mp_c4timer"
+			}
+			"*" "cvars: map timelimit"
+			{
+				"*" "timelimit: 00 min"		"rcon mp_timelimit 0"
+				"*" "timelimit: 15 min"		"rcon mp_timelimit 15"
+				"*" "timelimit: 30 min"		"rcon mp_timelimit 30"
+				"*" "timelimit: 60 min"		"rcon mp_timelimit 60"
+				"*" "timelimit: custom"		"messagemode rcon mp_timelimit"
+			}
+			"*" "cvars: death camera"
+			{
+				"*" "camera: anyone"		"rcon mp_fadetoblack 0;rcon mp_forcecamera 0"
+				"*" "camera: team only"		"rcon mp_fadetoblack 0;rcon mp_forcecamera 2"
+				"*" "camera: first-person"	"rcon mp_fadetoblack 0;rcon mp_forcecamera 3"
+				"*" "camera: fade to black"	"rcon mp_fadetoblack 1"
+			}
+			"*" "cvars: footsteps"
+			{
+				"*" "footsteps: disable"	"rcon mp_footsteps 0"
+				"*" "footsteps: enable"		"rcon mp_footsteps 1"
+			}
+			"*" "cvars: friendly fire"
+			{
+				"*" "friendly fire: disable" 	"rcon mp_friendlyfire 0"
+				"*" "friendly fire: enable" 	"rcon mp_friendlyfire 1"
+			}
+			"*" "cvars: pause"
+			{
+				"*" "pause: disable" 		"rcon pausable 0"
+				"*" "pause: enable" 		"rcon pausable 1"
+			}
+		}
+		"*" "server: settings"
+		{       
+			"*" "settings: 5on5" 			"exec save/gui/server/rcon/match/5on5.cfg"
+			"*" "settings: overtime mr-3" 		"exec save/gui/server/rcon/match/ot-mr3.cfg"
+			"*" "settings: overtime mr-5" 		"exec save/gui/server/rcon/match/ot-mr5.cfg"
+			"*" "settings: training" 		"exec save/gui/server/rcon/match/training.cfg"
+			"*" "settings: warmup" 			"exec save/gui/server/rcon/match/warmup.cfg"
+			"*" "settings: live!" 			"exec save/gui/server/rcon/match/start.cfg"
+		}
+		"*" "server: esl"
+		{
+			"*" "esl: 1on1 settings"
+			{
+				"*" "1on1 mr12" 		"exec save/gui/server/rcon/esl/e1on1.cfg"
+				"*" "1on1 aim" 			"exec save/gui/server/rcon/esl/e1on1aim.cfg"
+				"*" "1on1 eas" 			"exec save/gui/server/rcon/esl/e1on1eas.cfg"
+				"*" "1on1 fml" 			"exec save/gui/server/rcon/esl/e1on1fun.cfg"
+				"*" "1on1 quick"		"exec save/gui/server/rcon/esl/e1on1quick.cfg"
+			}
+			"*" "esl: team settings"
+			{
+				"*" "2on2 mr12" 		"exec save/gui/server/rcon/esl/e2on2.cfg"
+				"*" "2on2 eas" 			"exec save/gui/server/rcon/esl/e2on2eas.cfg"
+				"*" "2on2 quick"		"exec save/gui/server/rcon/esl/e2on2quick.cfg"
+				"*" "3on3" 			"exec save/gui/server/rcon/esl/e3on3.cfg"
+				"*" "3on3 fml"			"exec save/gui/server/rcon/esl/efunmap.cfg"
+			}
+			"*" "esl: 5on5 settings"
+			{
+				"*" "5on5 mr12"			"exec save/gui/server/rcon/esl/e5on5mr.cfg"
+				"*" "5on5 eas"			"exec save/gui/server/rcon/esl/e5on5eas.cfg"
+				"*" "5on5 atl"			"exec save/gui/server/rcon/esl/e5on5atl.cfg"
+				"*" "5on5 co"			"exec save/gui/server/rcon/esl/e5on5co.cfg"
+			}
+		} 
+		"*" "server: passwords" 
+		{      
+			"*" "passwords: eas" 			"exec save/gui/server/rcon/password/eas.cfg"
+			"*" "passwords: eps" 			"exec save/gui/server/rcon/password/eps.cfg" 
+			"*" "passwords: esl" 			"exec save/gui/server/rcon/password/esl.cfg"
+			"*" "passwords: fw" 			"exec save/gui/server/rcon/password/fw.cfg"
+			"*" "passwords: pcw" 			"exec save/gui/server/rcon/password/pcw.cfg"
+			"*" "passwords: custom" 		"exec save/gui/server/rcon/password/custom.cfg"
+		}
+		"*" "server: restart round" 
+		{       
+			"*" "restart round: 1 sec" 		"rcon sv_restartround 1"
+			"*" "restart round: 2 sec" 		"rcon sv_restartround 2"
+			"*" "restart round: 3 sec" 		"rcon sv_restartround 3"
+		}
+		"*" "server: spectators" 
+		{       
+			"*" "spectators: disable" 		"rcon allow_spectators 0"
+			"*" "spectators: enable" 		"rcon allow_spectators 1"
+		} 
+	}
+	"*" "server: local"
+	{
+		"*" "server: maps"
+		{ 
+			"*" "maps: dust2"      	                "changelevel de_dust2"
+			"*" "maps: forge"                       "changelevel de_forge"
+			"*" "maps: inferno"       	       	"changelevel de_inferno"
+			"*" "maps: mirage"     	               	"changelevel de_mirage"
+			"*" "maps: nuke"       	                "changelevel de_nuke"
+			"*" "maps: train"         	        "changelevel de_train"
+			"*" "maps: tuscan"    	                "changelevel de_tuscan"
+		} 
+		"*" "server: cvars"
+		{
+			"*" "cvars: startmoney"
+			{
+				"*" "startmoney: 800" 		"mp_startmoney 800"
+				"*" "startmoney: 5000" 		"mp_startmoney 5000"
+				"*" "startmoney: 10000" 	"mp_startmoney 10000"
+				"*" "startmoney: 16000"		"mp_startmoney 16000"
+				"*" "startmoney: custom"	"messagemode mp_startmoney"
+			}
+			"*" "cvars: roundtime"
+			{
+				"*" "roundtime: 1.45 min."      "mp_roundtime 1.75"
+				"*" "roundtime: 2.00 min." 	"mp_roundtime 2"
+				"*" "roundtime: 4.00 min." 	"mp_roundtime 4"
+				"*" "roundtime: 6.00 min." 	"mp_roundtime 6"
+				"*" "roundtime: custom"		"messagemode mp_roundtime"
+			}
+			"*" "cvars: buytime"
+			{
+				"*" "buytime: 00 sec." 		"mp_buytime 0"
+				"*" "buytime: 15 sec." 		"mp_buytime 0.25"
+				"*" "buytime: 30 sec." 		"mp_buytime 0.5"
+				"*" "buytime: 60 sec." 		"mp_buytime 1"
+				"*" "buytime: custom"		"messagemode mp_buytime"
+			}
+			"*" "cvars: freezetime"
+			{
+				"*" "freezetime: 00 sec." 	"mp_freezetime 0"
+				"*" "freezetime: 06 sec." 	"mp_freezetime 6"
+				"*" "freezetime: 10 sec." 	"mp_freezetime 10"
+				"*" "freezetime: 15 sec." 	"mp_freezetime 15"
+				"*" "freezetime: custom"	"messagemode mp_freezetime"
+			}	
+			"*" "cvars: c4 timer"
+			{
+				"*" "c4 timer: 30 sec." 	"mp_c4timer 30"
+				"*" "c4 timer: 35 sec." 	"mp_c4timer 35"
+				"*" "c4 timer: 40 sec." 	"mp_c4timer 40"
+				"*" "c4 timer: 45 sec." 	"mp_c4timer 45"
+				"*" "c4 timer: custom"		"messagemode mp_c4timer"
+			}
+			"*" "cvars: map timelimit"
+			{
+				"*" "timelimit: 00 min"		"mp_timelimit 0"
+				"*" "timelimit: 15 min"		"mp_timelimit 15"
+				"*" "timelimit: 30 min"		"mp_timelimit 30"
+				"*" "timelimit: 60 min"		"mp_timelimit 60"
+				"*" "timelimit: custom"		"messagemode mp_timelimit"
+			}
+			"*" "cvars: death camera"
+			{
+				"*" "camera: anyone"		"mp_fadetoblack 0;mp_forcecamera 0"
+				"*" "camera: team only"		"mp_fadetoblack 0;mp_forcecamera 2"
+				"*" "camera: first-person"	"mp_fadetoblack 0;mp_forcecamera 3"
+				"*" "camera: fade to black"	"mp_fadetoblack 1"
+			}
+			"*" "cvars: footsteps"
+			{
+				"*" "footsteps: disable"	"mp_footsteps 0"
+				"*" "footsteps: enable"		"mp_footsteps 1"
+			}
+			"*" "cvars: friendly fire"
+			{
+				"*" "friendly fire: disable" 	"mp_friendlyfire 0"
+				"*" "friendly fire: enable" 	"mp_friendlyfire 1"
+			}
+			"*" "cvars: pause"
+			{
+				"*" "pause: disable" 		"pausable 0"
+				"*" "pause: enable" 		"pausable 1"
+			}
+		}
+		"*" "server: settings"
+		{
+			"*" "settings: 5on5" 			"exec save/gui/server/local/5on5.cfg"  
+			"*" "settings: training" 		"exec save/gui/server/local/training.cfg"
+			"*" "settings: warmup" 			"exec save/gui/server/local/warmup.cfg"
+			"*" "settings: live!" 			"exec save/gui/server/local/start.cfg"
+		}
+		"*" "server: passwords" 
+		{      
+			"*" "passwords: cpl" 			"echo password: cpl;sv_password cpl"
+			"*" "passwords: eps" 			"echo password: eps;sv_password eps" 
+			"*" "passwords: esl" 			"echo password: esl;sv_password esl"
+			"*" "passwords: pcw" 			"echo password: pcw;sv_password pcw"
+			"*" "passwords: fnatic" 		"echo password: tbs;sv_password fnatic"
+		}
+		"*" "server: restart round" 
+		{       
+			"*" "restart round: 1 sec" 		"sv_restartround 1"
+			"*" "restart round: 2 sec" 		"sv_restartround 2"
+			"*" "restart round: 3 sec" 		"sv_restartround 3"
+		}
+		"*" "server: spectators" 
+		{       
+			"*" "spectators: disable" 		"allow_spectators 0"
+			"*" "spectators: enable" 		"allow_spectators 1"
+		} 
+		"*" "server: password" 				"messagemode sv_password"
+		"*" "server: hostname" 				"messagemode hostname"
+	}
+}
+"*" "player"
+{
+	"*" "player: configs"
+	{
+		"*" "configs: Friis" 				"exec save/gui/players/friis/valve.rc"
+		"*" "configs: Karrigan" 			"exec save/gui/players/karrigan/valve.rc"
+		"*" "configs: MODDII" 				"exec save/gui/players/moddii/valve.rc"
+		"*" "configs: Trace" 				"exec save/gui/players/trace/valve.rc"
+		"*" "configs: Xizt" 				"exec save/gui/players/xizt/valve.rc"
+		"*" "configs: Fnatic RC Player" 		"exec save/gui/players/default/valve.rc"
+	}
+	"*" "player: Barba"
+	{
+		"*" "configs: Barba" 				"exec barba.cfg 		;exec quick.cfg"
+		"*" "configs: Barba2" 				"exec barba2.cfg 		;exec quick.cfg"
+		"*" "configs: Barba3" 				"exec barba3.cfg 		;exec quick.cfg"
+	}
+	"*" "player: changes"
+	{
+		"*" "player: change name" 			"messagemode name"
+		"*" "player: change team" 
+			{
+			"*" "team: terrorist" 			"chooseteam;jointeam 1;w;slot2;cancelselect"
+			"*" "team: counter" 			"chooseteam;jointeam 2;w;slot4;cancelselect"
+			"*" "team: auto select" 		"chooseteam;jointeam 5;w;slot2;cancelselect"
+			"*" "team: spectator" 			"chooseteam;jointeam 6;w;cancelselect"
+			}
+		"*" "player: change team" 			"chooseteam"
+	}
+	"*" "player: crosshair"
+		{
+		"*" "crosshair: dynamic"
+			{
+			"*" "dynamic crosshair: disable" 	"cl_dynamiccrosshair 0"
+			"*" "dynamic crosshair: enable" 	"cl_dynamiccrosshair 1"
+			}
+		"*" "crosshair: translucent"
+			{
+			"*" "translucent: disable" 		"cl_crosshair_translucent 0"
+			"*" "translucent: enable" 		"cl_crosshair_translucent 1"
+			}
+		"*" "crosshair: color"
+			{
+			"*" "color: translucent"
+				{
+				"*" "green" 			"adjust_crosshair 0"
+				"*" "red" 			"adjust_crosshair 1"
+				"*" "blue" 			"adjust_crosshair 2"
+				"*" "yellow" 			"adjust_crosshair 3"
+				"*" "light blue" 		"adjust_crosshair 4"
+				}
+			"*" "color: non translucent"
+				{
+				"*" "green" 			"adjust_crosshair 5"
+				"*" "red" 			"adjust_crosshair 6"
+				"*" "blue" 			"adjust_crosshair 7"
+				"*" "yellow" 			"adjust_crosshair 8"
+				"*" "light blue" 		"adjust_crosshair 9"
+				}
+			"*" "color: others"
+				{
+				"*" "black"                    	"exec save/gui/colors/crosshair/black.cfg"
+				"*" "orange"			"exec save/gui/colors/crosshair/orange.cfg"
+				"*" "peru"			"exec save/gui/colors/crosshair/peru.cfg"
+				"*" "yellow"			"exec save/gui/colors/crosshair/yellow.cfg"
+				"*" "white"			"exec save/gui/colors/crosshair/white.cfg"	
+				}	
+			"*" "color: adjust crosshair" 		"messagemode cl_crosshair_color"
+		}
+		"*" "crosshair: size"
+			{
+			"*" "size: small"			"cl_crosshair_size 1"
+			"*" "size: medium"			"cl_crosshair_size 2"
+			"*" "size: large"			"cl_crosshair_size 3"
+			}
+		"*" "crosshair: on-off"
+			{
+			"*" "on-off: disable" 			"cl_crosshair_color 0;cl_crosshair_translucent 1"
+			"*" "on-off: enable" 			"cl_crosshair_color 255;cl_crosshair_translucent 0"
+			}
+	}
+	"*" "player: console"
+	{
+		"*" "color: black" 				"exec save/gui/colors/console/black.cfg"
+		"*" "color: default" 				"exec save/gui/colors/console/default.cfg"
+		"*" "color: orange" 				"exec save/gui/colors/console/orange.cfg"
+		"*" "color: peru" 	                     	"exec save/gui/colors/console/peru.cfg"
+		"*" "color: white" 				"exec save/gui/colors/console/white.cfg"
+	}
+	"*" "player: sensitivity"
+	{
+		"*" "sensitivity: zoom"
+			{
+			"*" "zoom: 1.0" 			"zoom_sensitivity_ratio 1.00000"
+			"*" "zoom: 1.2 (default)" 		"zoom_sensitivity_ratio 1.20000"
+			"*" "zoom: 1.4" 			"zoom_sensitivity_ratio 1.40000"
+			"*" "zoom: 1.6" 			"zoom_sensitivity_ratio 1.60000"
+			"*" "zoom: 1.8" 			"zoom_sensitivity_ratio 1.80000"
+			}
+		"*" "sensitivity: zoom" 			"messagemode zoom_sensitivity_ratio"
+		"*" "sensitivity: mouse"
+			{
+			"*" "mouse: 2.0" 			"sensitivity 2.00000"
+			"*" "mouse: 2.5" 			"sensitivity 2.50000"
+			"*" "mouse: 3.0" 			"sensitivity 3.00000"
+			"*" "mouse: 3.5" 			"sensitivity 3.50000"
+			"*" "mouse: 4.0" 			"sensitivity 4.00000"
+			}
+		"*" "sensitivity: mouse" 			"messagemode sensitivity"
+	}
+	"*" "player: weapon hands"
+	{
+		"*" "models: left"				"cl_righthand 0"
+		"*" "models: right"				"cl_righthand 1"
+		"*" "models: each"				"cl_righthand -1"
+	}
+	"*" "player: show fps"
+	{	
+		"*" "show fps: disable" 			"cl_showfps 0"
+		"*" "show fps: enable" 				"cl_showfps 1"
+	}
+	"*" "player: radar type"
+	{
+		"*" "radar type: transparent"			"cl_radartype 0"
+		"*" "radar type: solid"				"cl_radartype 1"
+	}
+	"*" "player: center id"
+	{
+		"*" "center id: disable" 			"hud_centerid 0"
+		"*" "center id: enable" 			"hud_centerid 1"
+	}
+	"*" "player: menu type"
+	{	
+		"*" "menu type: classic"			"setinfo _vgui_menus 0"
+		"*" "menu type: vgui"   			"setinfo _vgui_menus 1"
+	}
+	"*" "player: auto weapon switch"
+	{
+		"*" "auto weapon switch: disable"		"setinfo _cl_autowepswitch 0"
+		"*" "auto weapon switch: enable"		"setinfo _cl_autowepswitch 1"
+	}	
+}
+"*" "zbots"
+{
+	"*" "zbots: quota"
+		{
+			"*" "quota: 01 bots"			"bot_quota 1"
+			"*" "quota: 03 bots"			"bot_quota 3"
+			"*" "quota: 05 bots"			"bot_quota 5"
+			"*" "quota: 07 bots"			"bot_quota 7"
+			"*" "quota: 09 bots"			"bot_quota 9"
+			"*" "quota: custom"			"messagemode bot_quota"
+		}
+	"*" "zbots: difficulty"
+		{
+			"*" "difficulty: easy"			"bot_difficulty 0;say zbot skill: easy/fair"
+			"*" "difficulty: normal"		"bot_difficulty 1;say zbot skill: normal/tough"
+			"*" "difficulty: hard"			"bot_difficulty 2;say zbot skill: hard/veryhard"
+			"*" "difficulty: expert"		"bot_difficulty 3;say zbot skill: expert"
+			"*" "difficulty: elite"		        "bot_difficulty 4;say zbot skill: elite"
+		}
+	"*" "zbots: join team"
+		{
+			"*" "join team: tr"			"bot_join_team t"
+			"*" "join team: ct"			"bot_join_team ct"
+			"*" "join team: random"			"bot_join_team any"
+		}
+	"*" "zbots: stop"
+		{
+			"*" "stop: disable"	        	"bot_stop 0"
+			"*" "stop: enable"			"bot_stop 1"
+		}
+       	"*" "zbots: others"
+		{
+			"*" "others: bot kick"	        	"bot_kick"
+			"*" "others: bot kill"			"bot_kill"
+		}
+}
+"*" "media"
+{       
+	"*" "media: screenshots"                                                                 
+                                            {
+	                                        "*" "screenshots: normal"      "w;snapshot;w"
+		                                "*" "screenshots: score"       "w;+showscores;w;snapshot;w;-showscores;w"
+		                                "*" "screenshots: graphscore"  "w;net_graph 3;+showscores;w;snapshot;w;-showscores;net_graph 0;w"
+		                                "*" "screenshots: console"     "w;toggleconsole;w;snapshot;w;cancelselect;w"
+		                                "*" "screenshots: status"      "w;toggleconsole;w;clear;status;w;listplayers;w;stats;w;snapshot;w;toggleconsole;w;cancelselect;w"
+		                                "*" "screenshots: rcon status" "w;toggleconsole;clear;rcon status;w;snapshot;w;cancelselect;w"
+                                            }
+	"*" "media: demos"
+                                            {
+	                            MAP de_dust2		"*" "demos: record" 
+				{
+				TEAM1 "*" "de dust2 tr"		"stop;record save/demos/fnatic-dust2-tr;echo dust2-tr pov demo recording started! destination folder: save/demos/"
+				TEAM2 "*" "de dust2 ct"		"stop;record save/demos/fnatic-dust2-ct;echo dust2-ct pov demo recording started! destination folder: save/demos/"
+				}
+	                            MAP de_forge		"*" "demos: record" 
+				{
+				TEAM1 "*" "de forge tr"		"stop;record save/demos/fnatic-forge-tr;echo forge-tr pov demo recording started! destination folder: save/demos/"
+				TEAM2 "*" "de forge ct"		"stop;record save/demos/fnatic-forge-ct;echo forge-ct pov demo recording started! destination folder: save/demos/"
+				}
+	                            MAP de_inferno		"*" "demos: record" 
+				{
+				TEAM1 "*" "de inferno tr"	"stop;record save/demos/fnatic-inferno-tr;echo inferno-tr pov demo recording started! destination folder: save/demos/"
+				TEAM2 "*" "de inferno ct"	"stop;record save/demos/fnatic-inferno-ct;echo inferno-ct pov demo recording started! destination folder: save/demos/"
+				}
+	                            MAP de_mirage		"*" "demos: record" 
+				{
+				TEAM1 "*" "de mirage tr"	"stop;record save/demos/fnatic-mirage-tr;echo mirage-tr pov demo recording started! destination folder: save/demos/"
+				TEAM2 "*" "de mirage ct"	"stop;record save/demos/fnatic-mirage-ct;echo mirage-ct pov demo recording started! destination folder: save/demos/"
+				}
+	                            MAP de_nuke			"*" "demos: record" 
+				{
+				TEAM1 "*" "de nuke tr"		"stop;record save/demos/fnatic-nuke-tr;echo nuke-tr pov demo recording started! destination folder: save/demos/"
+				TEAM2 "*" "de nuke ct"		"stop;record save/demos/fnatic-nuke-ct;echo nuke-ct pov demo recording started! destination folder: save/demos/"
+				}
+	                            MAP de_train		"*" "demos: record" 
+				{
+				TEAM1 "*" "de train tr"		"stop;record save/demos/fnatic-train-tr;echo train-tr pov demo recording started! destination folder: save/demos/"
+				TEAM2 "*" "de train ct"		"stop;record save/demos/fnatic-train-ct;echo train-ct pov demo recording started! destination folder: save/demos/"
+				}
+	                            MAP de_tuscan		"*" "demos: record" 
+				{
+				TEAM1 "*" "de tuscan tr"	"stop;record save/demos/fnatic-tuscan-tr;echo tuscan-tr pov demo recording started! destination folder: save/demos/"
+				TEAM2 "*" "de tuscan ct"	"stop;record save/demos/fnatic-tuscan-ct;echo tuscan-ct pov demo recording started! destination folder: save/demos/"
+				}
+				"*" "demos: record manually"  	"messagemode record"
+				"*" "demos: stop" 		"stop"
+                                            }
+	"*" "media: statistic"                                                                 
+                                            {
+	                                                       "*" "statistic: players"              "toggleconsole;listplayers"
+	                                                       "*" "statistic: stats"                "toggleconsole;stats"
+		                                       	       "*" "statistic: status"               "toggleconsole;status"
+                                            }
+	"*" "media: condump"					"condump"
+}
+"*" "game" 
+{
+	"*" "game: hud"
+		{	
+			"*" "hud: fastswitch"
+				{
+				"*" "fastswitch: disable"	"hud_fastswitch 0"
+				"*" "fastswitch: enable"	"hud_fastswitch 1"
+				}
+			"*" "hud: draw"
+				{
+				"*" "draw: disable" 		"hud_draw 0"
+				"*" "draw: enable" 		"hud_draw 1"
+				}
+			"*" "hud: radar"
+				{
+				"*" "radar: disable" 		"hideradar"
+				"*" "radar: enable" 		"drawradar"
+				}
+			"*" "hud: saytext"
+				{
+				"*" "saytext: disable" 		"hud_saytext 0"
+				"*" "saytext: enable" 		"hud_saytext 1"
+				}
+			"*" "hud: time saytext" 		"messagemode hud_saytext_time"
+			"*" "hud: time history" 		"messagemode hud_drawhistory_time"
+			"*" "hud: time deathnotice" 		"messagemode hud_deathnotice_time"
+		}
+	"*" "game: graphic"
+		{
+			"*" "graphic: minmodels"
+				{
+				"*" "minmodels: disable" 	"cl_minmodels 0"
+				"*" "minmodels: enable" 	"cl_minmodels 1"
+				}
+			"*" "graphic: shadows"
+				{
+				"*" "shadows: disable"		"cl_shadows 0"
+				"*" "shadows: enable"		"cl_shadows 1"
+				}
+			"*" "graphic: weather effects"
+				{
+				"*" "weather effects: disable"	"cl_weather 0"
+				"*" "weather effects: enable" 	"cl_weather 1"
+				}
+			"*" "graphic: detail textures"
+				{
+				"*" "detail textures: disable" 	"r_detailtextures 0"
+				"*" "detail textures: enable" 	"r_detailtextures 1"
+				}
+			"*" "graphic: polygon offset"
+				{
+				"*" "polygon offset: ati" 	"gl_polyoffset 0.1"
+				"*" "polygon offset: nvidia" 	"gl_polyoffset 4"
+				}
+		}
+	"*" "game: connect"					"messagemode connect"
+	"*" "game: disconnect"					"disconnect"
+	"*" "game: quit" 					"quit"
+}
+"*" "misc"                                                                 
+{
+            	 "*" "misc: map description" 		         "showbriefing"
+            	 "*" "misc: time left" 		                 "timeleft"
+            	 "*" "misc: drop weapon"                         "drop"
+            	 "*" "misc: clean console"                       "clear"
+}
+"*" "close"		                                         "-commandmenu"
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+//  F n a t i c  R a i d C a l l ' s  C o m m a n d M e n u 
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
